@@ -56,6 +56,7 @@ class PopularMovie extends StatelessWidget {
                   title: movie.title,
                   poster: movie.poster,
                   overview: movie.overview,
+                  releaseDate: movie.releaseDate,
                 ),
               ),
             );
