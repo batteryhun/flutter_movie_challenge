@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:moviechallenge/model/movie_model.dart';
 import 'package:moviechallenge/service/api_service.dart';
+import 'package:moviechallenge/sreen/detail_screen.dart';
 
 class PopularMovie extends StatelessWidget {
   PopularMovie({super.key});
@@ -45,7 +46,21 @@ class PopularMovie extends StatelessWidget {
       },
       itemBuilder: (context, index) {
         var movie = snapshot.data![index];
-        return Container(
+        return GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DetailMovieScreen(
+                  rating: movie.rating,
+                  title: movie.title,
+                  poster: movie.poster,
+                  overview: movie.overview,
+                ),
+              ),
+            );
+          },
+          child: Container(
             clipBehavior: Clip.hardEdge,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
@@ -54,7 +69,9 @@ class PopularMovie extends StatelessWidget {
             child: Image.network(
               movie.poster,
               fit: BoxFit.cover,
-            ));
+            ),
+          ),
+        );
       },
     );
   }

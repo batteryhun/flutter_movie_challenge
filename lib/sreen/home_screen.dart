@@ -33,7 +33,7 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          SizedBox(height: 300, child: PopularMovie()),
+          SizedBox(height: 500, child: PopularMovie()),
         ],
       ),
     );
