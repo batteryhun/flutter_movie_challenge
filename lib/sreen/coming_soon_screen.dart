@@ -3,15 +3,15 @@ import 'package:moviechallenge/model/movie_model.dart';
 import 'package:moviechallenge/service/api_service.dart';
 import 'package:moviechallenge/sreen/detail_screen.dart';
 
-class NowPlayingScreen extends StatelessWidget {
-  NowPlayingScreen({super.key});
+class ComingSoonScreen extends StatelessWidget {
+  ComingSoonScreen({super.key});
 
-  Future<List<MovieModel>> nowPlayingMovies = ApiService.getNowPlayingMovie();
+  Future<List<MovieModel>> comingSoonMovies = ApiService.getComingSoonMovie();
 
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: nowPlayingMovies,
+      future: comingSoonMovies,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           return Padding(
@@ -21,7 +21,7 @@ class NowPlayingScreen extends StatelessWidget {
               children: [
                 const SizedBox(height: 20),
                 const Text(
-                  "Now on Screen",
+                  "Coming Soon",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 20,

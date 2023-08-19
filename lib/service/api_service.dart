@@ -26,7 +26,7 @@ class ApiService {
 
   static Future<List<MovieModel>> getNowPlayingMovie() async {
     List<MovieModel> nowPlayingMovieInstance = [];
-    final url = Uri.parse('$baseUrl$popular');
+    final url = Uri.parse('$baseUrl$nowPlaying');
     final response = await http.get(url);
     if (response.statusCode == 200) {
       final Map<String, dynamic> nowPlayingMovies = jsonDecode(response.body);
@@ -40,7 +40,7 @@ class ApiService {
 
   static Future<List<MovieModel>> getComingSoonMovie() async {
     List<MovieModel> comingSoonMovieInstance = [];
-    final url = Uri.parse('$baseUrl$popular');
+    final url = Uri.parse('$baseUrl$comingSoon');
     final response = await http.get(url);
     if (response.statusCode == 200) {
       final Map<String, dynamic> comingSoonMovies = jsonDecode(response.body);

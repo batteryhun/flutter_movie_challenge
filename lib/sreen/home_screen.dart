@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:moviechallenge/sreen/coming_soon_screen.dart';
+import 'package:moviechallenge/sreen/now_playing_screen.dart';
 import 'package:moviechallenge/sreen/popular_movie.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -11,7 +13,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         leadingWidth: 130,
-        backgroundColor: Colors.grey.withOpacity(0.3),
+        backgroundColor: Colors.grey.withOpacity(0.9),
         leading: const Center(
           child: Text(
             "For John",
@@ -33,10 +35,14 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Container(
         decoration: const BoxDecoration(color: Colors.black),
-        child: Column(
-          children: [
-            SizedBox(height: 500, child: PopularMovie()),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(height: 450, child: PopularMovie()),
+              SizedBox(height: 200, child: NowPlayingScreen()),
+              SizedBox(height: 200, child: ComingSoonScreen()),
+            ],
+          ),
         ),
       ),
     );
