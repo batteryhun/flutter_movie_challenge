@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:moviechallenge/sreen/coming_soon_screen.dart';
 import 'package:moviechallenge/sreen/now_playing_screen.dart';
@@ -11,9 +13,17 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        flexibleSpace: ClipRect(
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+            child: Container(
+              color: Colors.transparent,
+            ),
+          ),
+        ),
         elevation: 0,
         leadingWidth: 130,
-        backgroundColor: Colors.grey.withOpacity(0.9),
+        backgroundColor: Colors.grey.withOpacity(0.5),
         leading: const Center(
           child: Text(
             "For John",
