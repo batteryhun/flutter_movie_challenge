@@ -22,7 +22,11 @@ class PopularMovie extends StatelessWidget {
                   const SizedBox(height: 120),
                   const Text(
                     "Popular Movies",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white,
+                    ),
                   ),
                   const SizedBox(
                     height: 15,

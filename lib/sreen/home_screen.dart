@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         leadingWidth: 130,
-        backgroundColor: Colors.grey.withOpacity(0.7),
+        backgroundColor: Colors.grey.withOpacity(0.3),
         leading: const Center(
           child: Text(
             "For John",
@@ -31,10 +31,13 @@ class HomeScreen extends StatelessWidget {
           SizedBox(width: 10),
         ],
       ),
-      body: Column(
-        children: [
-          SizedBox(height: 500, child: PopularMovie()),
-        ],
+      body: Container(
+        decoration: const BoxDecoration(color: Colors.black),
+        child: Column(
+          children: [
+            SizedBox(height: 500, child: PopularMovie()),
+          ],
+        ),
       ),
     );
   }
